@@ -1,0 +1,59 @@
+# This is my assignment for the Course Data Steward Module 2.7
+# Programmer: Agnes Kuderer-Kreis
+# Date: 2025-01-08
+ 
+# Loop:
+i = 0
+while i < 6:
+    print(i)
+    i = i + 1
+
+print()
+
+i = 0
+while 1:
+    print(i)
+    if i > 6:
+        break
+    i = i + 1
+    
+# Decision:
+a = 1
+b = 2
+
+if a < b:
+    print("a is lower than b")
+
+# Function:
+def hello():
+    print("Hello! My name is Agnes.")
+    
+hello()
+
+# Import library:
+import numpy as np
+
+# Array:
+array1 = np.array([1,2,3,4])
+print(array1)
+array2 = array1 / 3
+print(array2)
+
+# Read data from file:
+labels = np.genfromtxt("water.dat", usecols=0, dtype=str, skip_header = 2, max_rows = 12)
+data = np.genfromtxt("water.dat", usecols=1, dtype=float, skip_header = 2, max_rows = 12)
+
+print(labels)
+print(data)
+
+# Create a diagram:
+import matplotlib.pyplot as plt
+
+labels = np.genfromtxt("water.dat", usecols=0, dtype=str, skip_header = 2, max_rows = 12)
+data = np.genfromtxt("water.dat", usecols=1, dtype=float, skip_header = 2, max_rows = 12)
+
+fig,ax = plt.subplots()
+plt.bar(labels,data)
+fig.autofmt_xdate(rotation=45)
+plt.ylabel("water production [m³]")
+plt.show()
